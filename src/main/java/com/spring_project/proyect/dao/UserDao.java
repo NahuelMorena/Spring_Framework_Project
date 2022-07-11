@@ -11,5 +11,7 @@ public interface UserDao {
 	void delete(Long id);
 
 	void register(User user);
+
+	User get_user_by_email_and_password(User user);
 	
 }
