@@ -7,13 +7,14 @@
     <title>Project with Spring Framework</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css"> 
     <script src="https://kit.fontawesome.com/62ab054c8d.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!----navbar------>
     <header class="header">
         <nav class="nav">
-            <a href="#" class="logo nav-link">Logo</a>
+            <a href="#" class="logo nav-link">Spring Framework</a>
             <button class="nav-toggle" aria-label="Open menu">
                 <i class="fas fa-bars"></i>
             </button>
@@ -24,40 +25,78 @@
         </nav>
     </header>
 
-    <!--table of users-->
-    <div class="table-title">
-        <h3>Table of users</h3>
-    </div>
-    <table class="table-fill">
-        <thead>
-            <tr>
-                <th class="table-left">Full name</th>
-                <th class="table-left">Email</th>
-                <th class="table-left">phone</th>
-                <th class="table-left">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="text-left">Pedro troglio</td>
-                <td class="text-left">pedrito@gmail.com</td>
-                <td class="text-left">234235345345</td>
-            </tr>
-            <tr>
-                <td class="text-left">Fernando baez</td>
-                <td class="text-left">fer@gmail.com</td>
-                <td class="text-left">456456546</td>
-            </tr>
-            <tr>
-                <td class="text-left">hernan rivadavia</td>
-                <td class="text-left">hernan@gmail.com</td>
-                <td class="text-left">456456345</td>
-            </tr>
-        </tbody>
-    </table>
+    <!--form and table-->
+    <main>
+        <section id="formContainer">
+            <h1>Add users</h1>
+            <form>
+                <label for="inName">Name</label>
+                <input id="inName" text="text" placeholder="Name">
+                <label for="inSurame">Surname</label>
+                <input id="inSurname" text="text" placeholder="Surname">
+                <label for="inEmail">Email</label>
+                <input id="inEmail" text="email" placeholder="Email">
+                <label for="inPhone">Phone</label>
+                <input id="inPhone" text="text" placeholder="Phone">
+                <label for="inPassword">Password</label>
+                <input id="inPassword" text="password" placeholder="Password">
+                <button type="submit">Save user</button>
+            </form>
+        </section>
+        <section id="tableContainer">
+            <table id="users">
+                <thead>
+                    <tr>
+                        <th class="table-left">Id</th>
+                        <th class="table-left">Full name</th>
+                        <th class="table-left">Email</th>
+                        <th class="table-left">phone</th>
+                        <th class="table-left">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1111111</td>
+                        <td>pablito perez</td>
+                        <td>pablo@gmail.com</td>
+                        <td>2234345345</td>
+                        <td>
+                            <i class="fas fa-trash"></i>
+                            <i class="fa-solid fa-pen"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">2222222222</td>
+                        <td class="text-left">Pedro troglio</td>
+                        <td class="text-left">pedrito@gmail.com</td>
+                        <td class="text-left">234235345345</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">4444444444444444</td>
+                        <td class="text-left">Fernando baez</td>
+                        <td class="text-left">fer@gmail.com</td>
+                        <td class="text-left">456456546</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">333333333333333</td>
+                        <td class="text-left">hernan rivadavia</td>
+                        <td class="text-left">hernan@gmail.com</td>
+                        <td class="text-left">456456345</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
 
 
-<script src="js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
 
