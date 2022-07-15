@@ -1,0 +1,41 @@
+.div-header {
+    text-align: center;
+    height: 300px;
+    padding: 12px;
+    background-image: url(https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2017/03/color-degradado-fondos-degradados-multicolor-51200.jpg?w=1560&quality=50&strip=all&ssl=1);
+    box-shadow: 0px 0px 20px black;
+    border-radius: 20px;
+}
+
+.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.user-name {
+    font-size: 18px;
+    margin-top: 14px;
+}
+
+.div-items {
+    padding: 20px;
+    margin: 30px 20px 0 20px;
+    box-shadow: 0px 0px 20px black;
+    border-radius: 20px;
+}
+
+.items {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+.items li {
+    display: inline-block;
+    margin: 5px;
+}
+
+.div-paragraph {
+    padding: 20px;
+}

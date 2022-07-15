@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project with Spring Framework</title>
 
+    <link rel="stylesheet" href="css/nav-style.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css"> 
     <script src="https://kit.fontawesome.com/62ab054c8d.js" crossorigin="anonymous"></script>
@@ -14,13 +15,13 @@
     <!----navbar------>
     <header class="header">
         <nav class="nav">
-            <a href="#" class="logo nav-link">Spring Framework</a>
+            <a href="index.html" class="logo nav-link">Spring Framework</a>
             <button class="nav-toggle" aria-label="Open menu">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-menu">
-                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Users</a></li>
-                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Profile</a></li>
+                <li class="nav-menu-item"><a href="index.html" class="nav-menu-link nav-link">Users</a></li>
+                <li class="nav-menu-item"><a href="profile.html" class="nav-menu-link nav-link">Profile</a></li>
             </ul>
         </nav>
     </header>
@@ -28,19 +29,21 @@
     <!--form and table-->
     <main>
         <section id="formContainer">
-            <h1>Add users</h1>
+            <h1 id="form-title">Add users</h1>
             <form>
-                <label for="inName">Name</label>
-                <input id="inName" text="text" placeholder="Name">
-                <label for="inSurame">Surname</label>
-                <input id="inSurname" text="text" placeholder="Surname">
-                <label for="inEmail">Email</label>
-                <input id="inEmail" text="email" placeholder="Email">
-                <label for="inPhone">Phone</label>
-                <input id="inPhone" text="text" placeholder="Phone">
-                <label for="inPassword">Password</label>
-                <input id="inPassword" text="password" placeholder="Password">
-                <button type="submit">Save user</button>
+                <label for="txtName">Name</label>
+                <input id="txtName" text="text" placeholder="Name" required>
+                <label for="txtSurame">Surname</label>
+                <input id="txtSurname" text="text" placeholder="Surname" required>
+                <label for="txtEmail">Email</label>
+                <input id="txtEmail" text="email" placeholder="Email" required>
+                <label for="txtPhone">Phone</label>
+                <input id="txtPhone" text="text" placeholder="Phone" required>
+                <label for="txtPassword">Password</label>
+                <input id="txtPassword" text="password" placeholder="Password" required>
+                <label for="txtRepeatPassword">Repeat Password</label>
+                <input id="txtRepeatPassword" text="password" placeholder="Repeat Password" required>
+                <button id="form-botton" onclick="register_user()" type="submit">Save user</button>
             </form>
         </section>
         <section id="tableContainer">
@@ -66,24 +69,24 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="text-left">2222222222</td>
-                        <td class="text-left">Pedro troglio</td>
-                        <td class="text-left">pedrito@gmail.com</td>
-                        <td class="text-left">234235345345</td>
+                        <td class="text-left" data-label="Id">2222222222</td>
+                        <td class="text-left" data-label="nombre completo">Pedro troglio</td>
+                        <td class="text-left" data-label="Email">pedrito@gmail.com</td>
+                        <td class="text-left" data-label="telefono">234235345345</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="text-left">4444444444444444</td>
-                        <td class="text-left">Fernando baez</td>
-                        <td class="text-left">fer@gmail.com</td>
-                        <td class="text-left">456456546</td>
+                        <td class="text-left" data-label="Id">4444444444444444</td>
+                        <td class="text-left" data-label="Id">Fernando baez</td>
+                        <td class="text-left" data-label="Id">fer@gmail.com</td>
+                        <td class="text-left" data-label="Id">456456546</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="text-left">333333333333333</td>
-                        <td class="text-left">hernan rivadavia</td>
-                        <td class="text-left">hernan@gmail.com</td>
-                        <td class="text-left">456456345</td>
+                        <td class="text-left" data-label="Id">333333333333333</td>
+                        <td class="text-left" data-label="Id">hernan rivadavia</td>
+                        <td class="text-left" data-label="Id">hernan@gmail.com</td>
+                        <td class="text-left" data-label="Id">456456345</td>
                         <td></td>
                     </tr>
                 </tbody>

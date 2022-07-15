@@ -21,7 +21,7 @@ public class AuthController {
 	
 	@RequestMapping(value = "api/login", method = RequestMethod.POST)
 	public String login(@RequestBody User user) {
-		User registeredUser = userDao.get_user_by_email_and_password(user);
+		User registeredUser = userDao.get_by_email_and_password(user);
 		if (registeredUser != null) {
 			
 			String tokenJwt = jwtUtil.create(String.valueOf(registeredUser.getId()), registeredUser.getEmail());

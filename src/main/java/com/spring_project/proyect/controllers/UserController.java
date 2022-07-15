@@ -1,7 +1,5 @@
 package com.spring_project.proyect.controllers;
 
-
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,14 +33,8 @@ public class UserController{
 	
 	@RequestMapping(value = "api/user/{id}")
 	public User get(@PathVariable Long id) {
-		User user = new User();
-		user.setId(id);
-		user.setName("Pedro");
-		user.setSurname("Hernandez");
-		user.setEmail("pedrito@gmail.com");
-		user.setPhone("1234234565");
-		user.setPassword("pedro123");
-		return user;
+		
+		return userDao.get(id);
 	}
 	
 	@RequestMapping(value = "api/users")
@@ -57,17 +49,15 @@ public class UserController{
 	public void register_user(@RequestBody User user) {
 		Argon2 argon2 = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
 		user.setPassword(argon2.hash(1, 1024, 1, user.getPassword()));
-		userDao.register(user);
+		userDao.save(user);
 	}
 	
-	public User edit() {
-		User user = new User();
-		user.setName("Pedro");
-		user.setSurname("Hernandez");
-		user.setEmail("pedrito@gmail.com");
-		user.setPhone("1234234565");
-		user.setPassword("pedro123");
-		return user;
+	@RequestMapping(value = "api/user/{id}", method = RequestMethod.POST)
+	public void update(@RequestBody User user,@PathVariable Long id) {
+		user.setId(id);
+		Argon2 argon2 = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
+		user.setPassword(argon2.hash(1, 1024, 1, user.getPassword()));
+		userDao.save(user);
 	}
 	
 	@RequestMapping(value = "api/user/{id}", method = RequestMethod.DELETE)

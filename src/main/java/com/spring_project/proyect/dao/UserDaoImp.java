@@ -19,6 +19,10 @@ public class UserDaoImp implements UserDao{
 	
 	@PersistenceContext
 	EntityManager entityManager;
+	
+	public User get(Long id) {
+		return entityManager.find(User.class, id);
+	}
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -34,13 +38,13 @@ public class UserDaoImp implements UserDao{
 	}
 
 	@Override
-	public void register(User user) {
+	public void save(User user) {
 		entityManager.merge(user);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public User get_user_by_email_and_password(User user) {
+	public User get_by_email_and_password(User user) {
 		
 		String query = "FROM User WHERE email = :email";
 		List<User> list =  entityManager.createQuery(query)
@@ -56,6 +60,4 @@ public class UserDaoImp implements UserDao{
 		}
 		return null;
 	}
-
-
 }
