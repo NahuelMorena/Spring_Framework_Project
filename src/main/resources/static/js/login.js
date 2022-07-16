@@ -34,5 +34,5 @@ async function logout() {
     }
     localStorage.removeItem('email');
     localStorage.removeItem('token');
-    window.location.href = 'access.html';
+    window.location.href = 'login.html';
 }

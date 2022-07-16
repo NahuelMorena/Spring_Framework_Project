@@ -49,9 +49,10 @@ async function register_user(){
 		},
 		body: JSON.stringify(data)
 	});
-	confirm("The account was created successfully!");
-    if (localStorage.token != undefined){
-        window.location.href = 'index.html';
+
+	alert("The account was created successfully!");
+    if (localStorage.token == undefined){
+        window.location.href = 'login.html';
     } 
 }
 

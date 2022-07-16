@@ -61,4 +61,18 @@ public class UserDaoImp implements UserDao{
 		}
 		return null;
 	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public User get_by_email(String email) {
+		String query = "FROM User WHERE email = :email";
+		List<User> list =  entityManager.createQuery(query)
+				.setParameter("email", email)
+				.getResultList();
+		
+		if (list.isEmpty()) {
+			return null;
+		}
+		return list.get(0);
+	}
 }

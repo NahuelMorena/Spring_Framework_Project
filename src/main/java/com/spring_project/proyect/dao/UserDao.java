@@ -15,4 +15,6 @@ public interface UserDao {
 	User get_by_email_and_password(User user);
 
 	User get(Long id);
+
+	User get_by_email(String email);
 }

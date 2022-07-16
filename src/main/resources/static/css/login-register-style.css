@@ -1,0 +1,25 @@
+@media only screen and (min-width: 992px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+#login-title {
+    text-align: center;
+}
+
+#link {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#div-form {
+    display: flex;
+    justify-content: center;
+}
+
+#formContainer {
+    width: 50%;
+}

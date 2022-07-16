@@ -33,8 +33,12 @@ public class UserController{
 	
 	@RequestMapping(value = "api/user/{id}")
 	public User get(@PathVariable Long id) {
-		
 		return userDao.get(id);
+	}
+	
+	@RequestMapping(value = "api/user/profile/{email}")
+	public User search_by_email(@PathVariable String email) {
+		return userDao.get_by_email(email);
 	}
 	
 	@RequestMapping(value = "api/users")

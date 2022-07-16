@@ -19,6 +19,7 @@ main {
 #formContainer {
     padding: 20px;
     box-shadow: 0px 0px 20px black;
+    max-height: 500px;
 }
 
 #formContainer > h1{
